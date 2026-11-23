@@ -8,6 +8,12 @@ class Pokemon:
         return "{} ({})".format(self.especie, self.tipo)
 
 
-meu_pokemon = Pokemon("fogo", "charmander")
+    def atacar(self, pokemon):
+        print("{} atacou {}!".format(self, pokemon))
 
-print(meu_pokemon)
+
+meu_pokemon = Pokemon("fogo", "charmander")
+pokemon_amigo = Pokemon("eletrico", "pikachu")
+meu_pokemon.atacar(pokemon_amigo)
+
+#print(meu_pokemon)
