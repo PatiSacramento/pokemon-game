@@ -1,7 +1,6 @@
 class Pokemon:
     # construtor:
-    def __init__(self, tipo, especie, level=1, nome=None): 
-        self.tipo = tipo
+    def __init__(self, especie, level=1, nome=None): 
         self.especie = especie
         self.level = level
         if nome:
@@ -17,9 +16,24 @@ class Pokemon:
         print("{} atacou {}!".format(self, pokemon))
 
 
+class PokemonEletrico(Pokemon):
+    tipo = "eletrico"
+
+    #polimorfismo
+    def atacar(self, pokemon):
+        print("{} lançou um raio do trovão em {}!".format(self, pokemon))
 
 
-meu_pokemon = Pokemon("fogo", "charmander", nome="carlos", level=50)
-pokemon_amigo = Pokemon("eletrico", "pikachu")
+class PokemonFogo(Pokemon):
+    tipo = "fogo"
 
-print(meu_pokemon)
+    def atacar(self, pokemon):
+        print("{} lançou uma bola de fogo em {}!".format(self, pokemon))
+
+
+class PokemonAgua(Pokemon):
+    tipo = "agua"
+
+    def atacar(self, pokemon):
+        print("{} lançou um jato d'água em {}!".format(self, pokemon))
+
